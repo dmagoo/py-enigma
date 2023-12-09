@@ -16,11 +16,16 @@ IDENTITY_MAP_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def glyph_to_ord(glyph):
     """Turn a character into an ordinal where a or A is 0 and z or Z is 25."""
-    return ord(glyph.upper()) - A_BASE
-
+    result = ord(glyph.upper()) - A_BASE
+    if(0 <= result <=A_BASE):
+        return result
+    raise ValueError()
 
 def ord_to_glyph(num):
     """Turn an ordinal into a character (0=A, 25=Z)."""
+    if not (0 <= num <=A_BASE):
+        raise ValueError()
+
     return chr(num + A_BASE).upper()
 
 
@@ -32,7 +37,7 @@ def glyph_pairs_to_map_string(glyph_pairs):
         base_map[glyph_to_ord(glyph_a)] = glyph_to_ord(glyph_b)
         base_map[glyph_to_ord(glyph_b)] = glyph_to_ord(glyph_a)
 
-    return [ord_to_glyph(ord) for ord in base_map]
+    return ''.join([ord_to_glyph(ord) for ord in base_map])
 
 
 def rotate_list(input_list, num_rotations):
@@ -70,8 +75,8 @@ class Encipherer:
 
 
 class Reflector(Encipherer):
-    """A special encipherer with no added functionality."""
-
+    """A special encipherer with no added logical functionality. A Reflector
+    differs physically from rotors, but not logically."""
 
 class EntryDisc(Encipherer):
     """A special encipherer with no added functionality."""
