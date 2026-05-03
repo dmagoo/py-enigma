@@ -43,3 +43,48 @@ REFLECTOR_UKW_C_M4 = "RDOBJNTKVEHMLFCWZAXGYIPSUQ"
 ENIGMA_I_ROTORS  = [ROTOR_I, ROTOR_II, ROTOR_III, ROTOR_IV, ROTOR_V]
 ENIGMA_M4_ROTORS = [ROTOR_I, ROTOR_II, ROTOR_III, ROTOR_IV, ROTOR_V,
                     ROTOR_VI, ROTOR_VII, ROTOR_VIII]
+
+# Commercial Enigma models (D, K) used a keyboard-layout entry wheel instead of identity.
+ETW_QWERTY = "QWERTZUIOASDFGHJKPYXCVBNML"
+
+# --- Enigma D / Enigma K (commercial, ~1926) --- UNVERIFIED: check wiring against a reference before use
+ROTOR_D_I    = "LPGSZMHAEOQKVXRFYBUTNICJDW"
+ROTOR_D_II   = "SLVGBTFXJQOHEWIRZYAMKPCNDU"
+ROTOR_D_III  = "CJGDPSHKTURAWZXFMYNQOBVLIE"
+REFLECTOR_D_UKW  = "IMETCGFRAYSQBZXWLHKDVUPOJN"
+TURNOVER_D_I   = ["Y"]
+TURNOVER_D_II  = ["E"]
+TURNOVER_D_III = ["N"]
+
+# Enigma K shares rotor wiring with Enigma D. Swiss K (Swiss military variant) has different
+# rotor wiring — not added here pending a reliable source.
+
+# --- Enigma T (Tirpitz, Japanese Navy) --- UNVERIFIED: check wiring against a reference before use
+# Each rotor has 5 turnover notches — pass the full list to Rotor().
+ETW_T        = "KZROUQHYAIGBLWVSTDXFPNMCJE"
+ROTOR_T_I    = "KPTYUELOCVGRFQDANJMBSWHZXI"
+ROTOR_T_II   = "UPHZLWEQMTDJXCAKSOIGVBYFNR"
+ROTOR_T_III  = "QUDLYRFEKONVZAXWHMGPJBSICT"
+ROTOR_T_IV   = "CIWTBKXNRESPFLYDAGVHQUOJZM"
+ROTOR_T_V    = "UAXGISNJBVERDYLFZWTPCKOHMQ"
+ROTOR_T_VI   = "XFUZGALVHCNYSEWQTDMRBKPIOJ"
+ROTOR_T_VII  = "BJVFTXPLNAYOZIKWGDQERUCHSM"
+ROTOR_T_VIII = "YMTPNZHWKODAJXELUQVGCBISRF"
+TURNOVER_T_I    = ["W", "Z", "E", "K", "Q"]
+TURNOVER_T_II   = ["W", "Z", "F", "L", "R"]
+TURNOVER_T_III  = ["W", "Z", "G", "M", "S"]
+TURNOVER_T_IV   = ["W", "Z", "J", "N", "T"]
+TURNOVER_T_V    = ["Y", "C", "F", "K", "R"]
+TURNOVER_T_VI   = ["X", "E", "I", "M", "Q"]
+TURNOVER_T_VII  = ["Y", "C", "F", "K", "R"]
+TURNOVER_T_VIII = ["X", "E", "I", "M", "Q"]
+# REFLECTOR_T_UKW not added — wiring not recalled with sufficient confidence.
+
+# --- Railway Enigma (Reichsbahn) --- UNVERIFIED: check wiring against a reference before use
+ROTOR_RB_I    = "JGDQOXUSCAMIFRVTPNEWKBLZYH"
+ROTOR_RB_II   = "NTZPSFBOKMWRCJDIVLAEYUXGHQ"
+ROTOR_RB_III  = "JVIUBHTCDYAKZMPSWQLRNXOEGF"
+REFLECTOR_RB_UKW = "QYHOGNECVPUZTFDJAXWMKISRBL"
+TURNOVER_RB_I   = ["N"]
+TURNOVER_RB_II  = ["E"]
+TURNOVER_RB_III = ["Y"]
