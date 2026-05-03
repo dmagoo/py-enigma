@@ -17,13 +17,13 @@ IDENTITY_MAP_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def glyph_to_ord(glyph):
     """Turn a character into an ordinal where a or A is 0 and z or Z is 25."""
     result = ord(glyph.upper()) - A_BASE
-    if(0 <= result <=A_BASE):
+    if 0 <= result <= 25:
         return result
     raise ValueError()
 
 def ord_to_glyph(num):
     """Turn an ordinal into a character (0=A, 25=Z)."""
-    if not (0 <= num <=A_BASE):
+    if not (0 <= num <= A_BASE):
         raise ValueError()
 
     return chr(num + A_BASE).upper()
@@ -126,9 +126,7 @@ class Rotor(Encipherer):
             glyph_to_ord(glyph) for glyph in notch_alignment_glyphs
         ]
         self._ring_alignment = glyph_to_ord(ring_alignment_glyph)
-
-        # Store the original values so we can reset the rotor
-        self._original_rotation = 0
+        self._original_rotation = self._rotation
 
     def transform(self, input_ord):
         """Get the output, but do not advance machine state."""

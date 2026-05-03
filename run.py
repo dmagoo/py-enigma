@@ -1,8 +1,8 @@
 
-from enigma import EnigmaMachine
-from encipherers import Rotor, EntryDisc, Reflector, PlugBoard
-from constants import *
+from enigma import EnigmaMachine, Rotor, EntryDisc, Reflector, PlugBoard
+from enigma.constants import *
 
+# TODO: move to utils
 def chunk_string(input_string, chunk_size=5, space_char=" "):
     return space_char.join(
         [
@@ -14,13 +14,13 @@ def chunk_string(input_string, chunk_size=5, space_char=" "):
 
 def makeEnigma1(rotor1, rotor2, rotor3, reflector, plug_board=None):
     return EnigmaMachine(
-        [rotor1, rotor2, rotor3], reflector, EntryDisc(ETW_ENIGMA1), plug_board
+        [rotor1, rotor2, rotor3], reflector, EntryDisc(ETW), plug_board
     )
 
 
 def makeEnigma4(rotor1, rotor2, rotor3, reflector, plug_board=None):
     return EnigmaMachine(
-        [rotor1, rotor2, rotor3], reflector, EntryDisc(ETW_ENIGMA1), plug_board
+        [rotor1, rotor2, rotor3], reflector, EntryDisc(ETW), plug_board
     )
 
 
@@ -66,10 +66,10 @@ def enigma1DefaultTest():
     input_val = "AAAAA"
     expected = "BDZGO"
     m = makeEnigma1(
-        Rotor(ROTOR_ENIGMA1_1),
-        Rotor(ROTOR_ENIGMA1_2),
-        Rotor(ROTOR_ENIGMA1_3),
-        Reflector(REFLECTOR_ENIGMA1_UKW_B),
+        Rotor(ROTOR_I),
+        Rotor(ROTOR_II),
+        Rotor(ROTOR_III),
+        Reflector(REFLECTOR_UKW_B),
     )
     m.reset()
     print("Applying", input_val)
@@ -88,10 +88,10 @@ def enigma1DefaultWithAdvancementTest():
     # input_val = ROTOR_ENIGMA1_1
     # input_val = 'a'
     m = makeEnigma1(
-        Rotor(ROTOR_ENIGMA1_1, "A", "Q"),
-        Rotor(ROTOR_ENIGMA1_2, "A", "E"),
-        Rotor(ROTOR_ENIGMA1_3, "A", "V"),
-        Reflector(REFLECTOR_ENIGMA1_UKW_B),
+        Rotor(ROTOR_I,   "A", TURNOVER_I),
+        Rotor(ROTOR_II,  "A", TURNOVER_II),
+        Rotor(ROTOR_III, "A", TURNOVER_III),
+        Reflector(REFLECTOR_UKW_B),
         # PlugBoard([("U","B")])
         PlugBoard([]),
     )
@@ -120,14 +120,14 @@ def tryUBoat():
     # RING settings for this machine: AAEL
     m = EnigmaMachine(
         [
-            # TODO: greek component did not have nothces, allow NONE
-            Rotor(GREEK_ENIGMAM4_BETA, "I", (), "A"),
-            Rotor(ROTOR_ENIGMAM4_5, "G", ["Z"], "A"),
-            Rotor(ROTOR_ENIGMAM4_6, "Z", ("Z", "M"), "E"),
-            Rotor(ROTOR_ENIGMAM4_8, "Q", ("Z", "M"), "L"),
+            # TODO: greek component did not have notches, allow NONE
+            Rotor(GREEK_BETA,  "I", [],            "A"),
+            Rotor(ROTOR_V,     "G", TURNOVER_V,    "A"),
+            Rotor(ROTOR_VI,    "Z", TURNOVER_VI,   "E"),
+            Rotor(ROTOR_VIII,  "Q", TURNOVER_VIII, "L"),
         ],
-        Reflector(REFLECTOR_ENIGMAM4_UKW_C),
-        EntryDisc(ETW_ENIGMA1),
+        Reflector(REFLECTOR_UKW_C_M4),
+        EntryDisc(ETW),
         PlugBoard(
             [
                 ("A", "E"),

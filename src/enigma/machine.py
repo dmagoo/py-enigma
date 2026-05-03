@@ -12,7 +12,7 @@ https://enigma.hoerenberg.com/index.php?cat=The%20U534%20messages&page=P1030660
 
 """
 
-from encipherers import glyph_to_ord, ord_to_glyph
+from .encipherers import glyph_to_ord, ord_to_glyph
 
 class EnigmaMachine:
     """Base EnigmaMachine Class."""
@@ -36,7 +36,7 @@ class EnigmaMachine:
         The length of the string must match the number of rotors
         """
         if len(rotor_string) != len(self._rotor_list):
-            raise "Rotor Count Mismatch"
+            raise ValueError("Rotor Count Mismatch")
 
         for i, rotor in enumerate(self._rotor_list):
             rotor.set_position(rotor_string[i])
