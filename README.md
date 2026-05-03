@@ -2,17 +2,90 @@
 
 A Python simulator of the Enigma cipher machine. The Enigma was an electromechanical rotor cipher device used extensively by Nazi Germany during World War II; its messages were broken by Allied cryptanalysts at Bletchley Park, famously with help from Alan Turing. This library models the physical signal path — entry disc, plugboard, rotors, and reflector — including historically accurate rotor wiring, turnover mechanics, and double-stepping behavior, for both the standard Enigma I and the four-rotor M4 Navy variant.
 
-## Installation
+## Setup
+
+Requires Python 3.8+.
 
 ```bash
+python -m venv env
+source env/bin/activate       # Windows: env\Scripts\activate
 pip install -e .
 ```
 
-No runtime dependencies. Python 3.8+.
+## Usage
 
-## Quick start
+```bash
+enigma [--config NAME_OR_PATH] [--rotors ...] [--positions ...] [--rings ...] [--reflector ...] [--plugboard ...] [--input FILE]
+```
 
-The example below decrypts a real M4 U-boat message. The machine is configured with the Greek Beta wheel, rotors V/VI/VIII, reflector UKW-C (thin), ring settings, and a 10-pair plugboard — matching a known historical intercept.
+| Flag | Description |
+|------|-------------|
+| `--config NAME_OR_PATH` | Load a named historical config or a path to a JSON config file |
+| `--rotors I II III` | Rotor names in left-to-right order |
+| `--positions A A A` | Starting position for each rotor |
+| `--rings A A A` | Ring setting for each rotor |
+| `--reflector UKW-B` | Reflector name |
+| `--plugboard AE BF CM` | Plugboard swap pairs |
+| `--input FILE` | Read message from a file instead of stdin |
+
+**Rotors:** `I` `II` `III` `IV` `V` `VI` `VII` `VIII` `BETA` `GAMMA`
+
+**Reflectors:** `UKW-A` `UKW-B` `UKW-C` `UKW-B-M4` `UKW-C-M4`
+
+Individual flags override values from `--config`, so you can load a historical config and adjust a single setting without respecifying everything.
+
+Message input is read from `--input`, piped stdin, or typed interactively if neither is provided.
+
+Enigma is symmetric — the same settings encrypt and decrypt. Feed in ciphertext and you get plaintext out.
+
+## Examples
+
+```bash
+# Named historical config — U-boat M4 intercept, November 1942
+enigma --config uboat-p1030660 --input message.txt
+
+# Pipe input
+echo "HELLOWORLD" | enigma --config uboat-p1030660
+
+# Manual config — Enigma I, rotors I/II/III, UKW-B
+enigma --rotors I II III --positions A A A --reflector UKW-B
+
+# Load a historical config and override the starting positions
+enigma --config enigma1-default --positions Q E V
+
+# Custom JSON config file
+enigma --config ~/my-machine.json --input ciphertext.txt
+
+# Full M4 config via individual args
+enigma --rotors BETA V VI VIII --positions I G Z Q --rings A A E L --reflector UKW-C-M4 --plugboard AE BF CM DQ HU JN LX PR SZ VW
+```
+
+## Historical configs
+
+Named configs are stored in `src/enigma/data/historical-configs.json`.
+
+| Name | Description |
+|------|-------------|
+| `uboat-p1030660` | U-boat M4 intercept, U-534, November 1942 |
+| `enigma1-default` | Enigma I, rotors I/II/III, all positions A, UKW-B |
+
+## Custom config format
+
+A user-supplied JSON config is a single object with the same keys:
+
+```json
+{
+  "rotors":    ["I", "II", "III"],
+  "positions": ["A", "A", "A"],
+  "rings":     ["A", "A", "A"],
+  "reflector": "UKW-B",
+  "plugboard": ["AE", "BF"]
+}
+```
+
+`positions`, `rings`, and `plugboard` are optional and default to all-A and no swaps respectively.
+
+## API
 
 ```python
 from enigma import EnigmaMachine, Rotor, EntryDisc, Reflector, PlugBoard
@@ -20,68 +93,27 @@ from enigma.constants import *
 
 m = EnigmaMachine(
     [
-        Rotor(GREEK_BETA,  "I", [],            "A"),  # Greek wheel — no turnover notch
+        Rotor(GREEK_BETA,  "I", [],            "A"),
         Rotor(ROTOR_V,     "G", TURNOVER_V,    "A"),
         Rotor(ROTOR_VI,    "Z", TURNOVER_VI,   "E"),
         Rotor(ROTOR_VIII,  "Q", TURNOVER_VIII, "L"),
     ],
     Reflector(REFLECTOR_UKW_C_M4),
     EntryDisc(ETW),
-    PlugBoard([
-        ("A", "E"), ("B", "F"), ("C", "M"), ("D", "Q"), ("H", "U"),
-        ("J", "N"), ("L", "X"), ("P", "R"), ("S", "Z"), ("V", "W"),
-    ]),
+    PlugBoard([("A","E"), ("B","F"), ("C","M"), ("D","Q"), ("H","U"),
+               ("J","N"), ("L","X"), ("P","R"), ("S","Z"), ("V","W")]),
 )
 
-plaintext = m.decode_string(
-    "TWNHYAZGBILSHEWPGLBPQLWQEKITIAFGZHWIMCWDFXPAFEILQZWFNRFTTQHUOADVLR"
-    "LGAOQKVLWLSJHWOFJJSLUVEYNRRAJAQDKQBGMFYCEVKPFJPKOWHHQZYZEQRTQIKKXIXTFPOEMI"
-)
-print(plaintext)
-```
-
-## API
-
-### `EnigmaMachine`
-
-```python
-EnigmaMachine(rotor_list, reflector, entry_disc, plug_board=None)
+plaintext = m.decode_string("TWNHYAZGBILSHEWPGLBPQLWQ...")
 ```
 
 | Method | Description |
-|---|---|
+|--------|-------------|
 | `decode_string(text)` | Encipher/decipher a full message. Spaces are ignored. |
 | `next_glyph(char)` | Advance rotors and return the transformed character. |
 | `transform_glyph(char)` | Transform without advancing (lookahead). |
-| `set_rotor_positions(string)` | Set rotor positions, e.g. `"AAA"` or `"VGZ"`. |
+| `set_rotor_positions(string)` | Set rotor positions, e.g. `"AAA"`. |
 | `reset()` | Return machine to its initial configuration. |
-
-### `Rotor`
-
-```python
-Rotor(wiring, position="A", turnover_notches=[], ring_setting="A")
-```
-
-`wiring` is a 26-character string from `constants.py`. `turnover_notches` is a list of glyphs at which the next rotor steps; pass `[]` for Greek wheels, which have no notches.
-
-### `Reflector` / `EntryDisc` / `PlugBoard`
-
-```python
-Reflector(wiring_string)
-EntryDisc(wiring_string)
-PlugBoard([("A", "B"), ("C", "D"), ...])   # list of letter-swap pairs
-```
-
-### Constants
-
-Imported via `from enigma.constants import *`:
-
-| Group | Names |
-|---|---|
-| Rotors (Enigma I) | `ROTOR_I` – `ROTOR_V`, `TURNOVER_I` – `TURNOVER_V` |
-| Rotors (M4 Navy) | `ROTOR_VI` – `ROTOR_VIII`, `GREEK_BETA`, `GREEK_GAMMA` |
-| Reflectors | `REFLECTOR_UKW_A/B/C`, `REFLECTOR_UKW_B_M4`, `REFLECTOR_UKW_C_M4` |
-| Entry discs | `ETW`, `ETW_ENIGMA1` |
 
 ## Running tests
 
@@ -91,7 +123,6 @@ pytest
 
 ## Notes
 
-- **Enigma is symmetric:** the same machine settings encrypt and decrypt. Feed ciphertext in and you get plaintext out.
-- **No machine-model enforcement:** using a rotor from the wrong model still simulates correctly — just not historically accurately.
-- **Ring settings:** the fourth argument to `Rotor()` offsets the internal wiring relative to the alphabet ring, independently of the displayed rotor position.
-- **Multi-notch rotors:** rotors VI, VII, and VIII have two turnover notches (`Z` and `M`). `TURNOVER_VI/VII/VIII` reflect this.
+- **Ring settings** offset the internal wiring relative to the alphabet ring, independently of the displayed rotor position.
+- **Multi-notch rotors:** VI, VII, and VIII have two turnover notches (`Z` and `M`). Greek wheels (Beta, Gamma) have none.
+- **No machine-model enforcement:** using a rotor from the wrong model still simulates correctly, just not historically accurately.

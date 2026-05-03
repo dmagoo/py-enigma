@@ -1,0 +1,20 @@
+[
+  {
+    "name": "uboat-p1030660",
+    "description": "U-boat M4 intercept from U-534, November 1942",
+    "rotors": ["BETA", "V", "VI", "VIII"],
+    "positions": ["I", "G", "Z", "Q"],
+    "rings": ["A", "A", "E", "L"],
+    "reflector": "UKW-C-M4",
+    "plugboard": ["AE", "BF", "CM", "DQ", "HU", "JN", "LX", "PR", "SZ", "VW"]
+  },
+  {
+    "name": "enigma1-default",
+    "description": "Enigma I with rotors I/II/III at AAA, UKW-B, no plugboard",
+    "rotors": ["I", "II", "III"],
+    "positions": ["A", "A", "A"],
+    "rings": ["A", "A", "A"],
+    "reflector": "UKW-B",
+    "plugboard": []
+  }
+]

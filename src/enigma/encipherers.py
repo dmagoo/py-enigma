@@ -113,7 +113,7 @@ class Rotor(Encipherer):
         self,
         map_string,
         rotation_glyph="A",
-        notch_alignment_glyphs=["A"],
+        notch_alignment_glyphs=[],
         ring_alignment_glyph="A",
     ):
         """Initialize the rotor.
