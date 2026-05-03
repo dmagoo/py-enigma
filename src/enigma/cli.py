@@ -53,7 +53,11 @@ def _resolve_config(args):
     if args.config:
         config = _load_named_config(args.config)
         if config is None:
-            with open(args.config) as f:
+            p = Path(args.config)
+            if not p.exists():
+                print(f"error: unknown config name and file not found: {args.config}", file=sys.stderr)
+                sys.exit(1)
+            with open(p) as f:
                 config = json.load(f)
 
     if args.rotors:
@@ -95,23 +99,73 @@ def _build_machine(config):
 
 def _read_message(args):
     if args.input:
-        return Path(args.input).read_text().strip()
-    if not sys.stdin.isatty():
-        return sys.stdin.read().strip()
-    return input("Message: ").strip()
+        p = Path(args.input)
+        if not p.exists():
+            print(f"error: input file not found: {args.input}", file=sys.stderr)
+            sys.exit(1)
+        return p.read_text().strip()
+    return sys.stdin.read().strip()
+
+
+def _rotor_positions(machine):
+    return "  ".join(
+        chr(r._rotation + ord("A")) for r in machine._rotor_list
+    )
+
+
+_HELP = """
+Commands:
+  /reset   return rotors to starting positions
+  /help    show this message
+  /exit    quit
+  Ctrl+D   quit
+"""
+
+
+def _run_interactive(machine, config):
+    rotors = "  ".join(config["rotors"])
+    print(f"Enigma  |  rotors: {rotors}  |  reflector: {config['reflector']}")
+    print("Type a message and press Enter to encipher. /help for commands.")
+    print()
+    while True:
+        try:
+            positions = _rotor_positions(machine)
+            line = input(f"[{positions}] > ").strip()
+        except EOFError:
+            print()
+            break
+        if not line:
+            continue
+        if line == "/exit":
+            break
+        if line == "/reset":
+            machine.reset()
+            print("rotors reset.")
+        elif line in ("/help", "/?", "/h"):
+            print(_HELP)
+        elif line.startswith("/"):
+            print(f"unknown command: {line}  (type /help for commands)")
+        else:
+            print(machine.decode_string(line))
+        print()
 
 
 def main():
     parser = argparse.ArgumentParser(prog="enigma", description="Enigma machine simulator")
-    parser.add_argument("--config",    metavar="NAME_OR_PATH", help="named historical config or path to a JSON file")
-    parser.add_argument("--rotors",    nargs="+", metavar="ROTOR",    help="rotor names in order, e.g. I II III")
-    parser.add_argument("--positions", nargs="+", metavar="POS",      help="starting positions, e.g. A A A")
-    parser.add_argument("--rings",     nargs="+", metavar="RING",     help="ring settings, e.g. A A A")
-    parser.add_argument("--reflector", metavar="REFLECTOR",           help="reflector name, e.g. UKW-B")
-    parser.add_argument("--plugboard", nargs="+", metavar="PAIR",     help="plugboard pairs, e.g. AE BF CM")
-    parser.add_argument("--input",     metavar="FILE",                help="read message from file")
+    parser.add_argument("--config",      metavar="NAME_OR_PATH", help="named historical config or path to a JSON file")
+    parser.add_argument("--rotors",      nargs="+", metavar="ROTOR",    help="rotor names in order, e.g. I II III")
+    parser.add_argument("--positions",   nargs="+", metavar="POS",      help="starting positions, e.g. A A A")
+    parser.add_argument("--rings",       nargs="+", metavar="RING",     help="ring settings, e.g. A A A")
+    parser.add_argument("--reflector",   metavar="REFLECTOR",           help="reflector name, e.g. UKW-B")
+    parser.add_argument("--plugboard",   nargs="+", metavar="PAIR",     help="plugboard pairs, e.g. AE BF CM")
+    parser.add_argument("--input",       metavar="FILE",                help="read message from file")
+    parser.add_argument("--interactive", action="store_true",           help="interactive prompt mode")
 
     args = parser.parse_args()
     config = _resolve_config(args)
     machine = _build_machine(config)
-    print(machine.decode_string(_read_message(args)))
+
+    if args.interactive:
+        _run_interactive(machine, config)
+    else:
+        print(machine.decode_string(_read_message(args)))

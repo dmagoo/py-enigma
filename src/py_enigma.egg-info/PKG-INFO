@@ -1,13 +1,11 @@
-Metadata-Version: 2.4
+Metadata-Version: 1.2
 Name: py-enigma
 Version: 0.1.0
 Summary: Enigma machine simulator
+Home-page: UNKNOWN
 Author: Dave MacGugan
 Author-email: dave@macgugan.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
 Requires-Python: >=3.8
-License-File: LICENSE.txt
-Dynamic: author
-Dynamic: author-email
-Dynamic: license-file
-Dynamic: requires-python
-Dynamic: summary

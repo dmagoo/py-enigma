@@ -111,7 +111,7 @@ class EnigmaMachine:
     def decode_string(self, input_val):
         """Run the simulation on an entire string."""
         return "".join([
-            self.next_glyph(c) for c in input_val.replace(" ", "")
+            self.next_glyph(c) for c in input_val.upper() if c.isalpha()
         ])
 
     def reset(self):
