@@ -43,14 +43,14 @@ def basicTest():
 
 def simpleAdvancementTest():
     m = EnigmaMachine(
-        [Rotor(ROTOR_IDENTITY)], Reflector(REFLECTOR_IDENTITY), EntryDisc(ETW_ENIGMA1)
+        [Rotor(ROTOR_IDENTITY)], Reflector(REFLECTOR_IDENTITY), EntryDisc(ETW)
     )
     return [m.next_glyph(c) for c in "aaaaaa"]
 
 
 def testReset():
     m = EnigmaMachine(
-        [Rotor(ROTOR_IDENTITY)], Reflector(REFLECTOR_IDENTITY), EntryDisc(ETW_ENIGMA1)
+        [Rotor(ROTOR_IDENTITY)], Reflector(REFLECTOR_IDENTITY), EntryDisc(ETW)
     )
     print("first run with aaaaaa")
     print(m.decode_string("aaaaaa"))
