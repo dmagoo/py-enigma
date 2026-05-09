@@ -12,7 +12,9 @@ setup(
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
     python_requires='>=3.8',
-    install_requires=[],
+    install_requires=[
+        "windows-curses; platform_system=='Windows'",
+    ],
     package_data={"enigma": ["data/*.json"]},
     entry_points={
         "console_scripts": [

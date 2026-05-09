@@ -166,6 +166,7 @@ def main():
     machine = _build_machine(config)
 
     if args.interactive:
-        _run_interactive(machine, config)
+        from .tui import run_tui
+        run_tui(machine, config)
     else:
         print(machine.decode_string(_read_message(args)))
