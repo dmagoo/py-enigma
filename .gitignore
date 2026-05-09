@@ -22,3 +22,7 @@ venv.bak/
 
 # Claude Code
 .claude/
+
+# Compiled data artifacts
+*.db
+data/codebooks/backups/

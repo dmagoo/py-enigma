@@ -115,6 +115,23 @@ plaintext = m.decode_string("TWNHYAZGBILSHEWPGLBPQLWQ...")
 | `set_rotor_positions(string)` | Set rotor positions, e.g. `"AAA"`. |
 | `reset()` | Return machine to its initial configuration. |
 
+## enigma-utils
+
+A second command ships with the same package for managing historical key-sheet data.
+
+```bash
+enigma-utils scan compile data/scans/scan-luftwaffe-2744.json
+enigma-utils scan compile --all        # compile every file in data/scans/
+enigma-utils scan compile --all -v     # verbose: show per-entry detail
+```
+
+Scan files are raw JSON transcriptions of historical key sheets stored in `data/scans/`. Compiled codebooks land in `data/codebooks/` and are tracked by git. Before overwriting an existing codebook a timestamped backup is written to `data/codebooks/backups/` (not tracked).
+
+| Flag | Description |
+|------|-------------|
+| `--all` | Compile every scan file in `data/scans/` |
+| `-v / --verbose` | Show per-entry backup and patch detail |
+
 ## Running tests
 
 ```bash

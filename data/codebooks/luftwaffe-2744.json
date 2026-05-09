@@ -1,0 +1,1350 @@
+{
+  "codebook_id": "luftwaffe-2744",
+  "entries": [
+    {
+      "day": 31,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "V",
+        "IV"
+      ],
+      "ring_settings": [
+        17,
+        11,
+        4
+      ],
+      "plugboard": [
+        "TW",
+        "BI",
+        "UY",
+        "GP",
+        "CK",
+        "JQ",
+        "DL",
+        "RV",
+        "EM",
+        "AH"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "NS"
+        ],
+        "2300": [
+          "FO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": [
+        "TZ",
+        "IM"
+      ],
+      "recognition_groups": [
+        "kim",
+        "pwh",
+        "sbx",
+        "csw"
+      ]
+    },
+    {
+      "day": 30,
+      "month_year": null,
+      "rotor_order": [
+        "I",
+        "IV",
+        "V"
+      ],
+      "ring_settings": [
+        8,
+        17,
+        21
+      ],
+      "plugboard": [
+        "LS",
+        "DH",
+        "MT",
+        "EO",
+        "AP",
+        "UZ",
+        "FQ",
+        "WY",
+        "BK",
+        "GR"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "CI"
+        ],
+        "2300": [
+          "JN"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": [
+        "UX",
+        "EP"
+      ],
+      "recognition_groups": [
+        "uaq",
+        "omn",
+        "ume",
+        "duf"
+      ]
+    },
+    {
+      "day": 29,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "II",
+        "III"
+      ],
+      "ring_settings": [
+        11,
+        14,
+        5
+      ],
+      "plugboard": [
+        "DO",
+        "JW",
+        "CN",
+        "IV",
+        "PZ",
+        "BM",
+        "HU",
+        "AL",
+        "FR",
+        "KX"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "EQ"
+        ],
+        "2300": [
+          "GT"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "don",
+        "cqo",
+        "xum",
+        "bpg"
+      ]
+    },
+    {
+      "day": 28,
+      "month_year": null,
+      "rotor_order": [
+        "II",
+        "IV",
+        "V"
+      ],
+      "ring_settings": [
+        2,
+        20,
+        16
+      ],
+      "plugboard": [
+        "NT",
+        "HK",
+        "BW",
+        "EP",
+        "LQ",
+        "AU",
+        "OY",
+        "FJ",
+        "CX",
+        "GI"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "DZ"
+        ],
+        "2300": [
+          "MR"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "lui",
+        "pyg",
+        "sby",
+        "dtq"
+      ]
+    },
+    {
+      "day": 27,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "V",
+        "IV"
+      ],
+      "ring_settings": [
+        18,
+        13,
+        22
+      ],
+      "plugboard": [
+        "HM",
+        "GV",
+        "KZ",
+        "AI",
+        "DQ",
+        "NR",
+        "ES",
+        "BL",
+        "OU",
+        "FT"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "CP"
+        ],
+        "2300": [
+          "JY"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "cmy",
+        "fqr",
+        "scl",
+        "bur"
+      ]
+    },
+    {
+      "day": 26,
+      "month_year": null,
+      "rotor_order": [
+        "I",
+        "III",
+        "II"
+      ],
+      "ring_settings": [
+        24,
+        10,
+        1
+      ],
+      "plugboard": [
+        "GW",
+        "AQ",
+        "MO",
+        "FV",
+        "PS",
+        "DI",
+        "RU",
+        "JZ",
+        "BN",
+        "EH"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "KT"
+        ],
+        "2300": [
+          "CL"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "kbj",
+        "yaq",
+        "udm",
+        "cnz"
+      ]
+    },
+    {
+      "day": 25,
+      "month_year": null,
+      "rotor_order": [
+        "IV",
+        "I",
+        "III"
+      ],
+      "ring_settings": [
+        4,
+        25,
+        23
+      ],
+      "plugboard": [
+        "LT",
+        "DR",
+        "QX",
+        "AG",
+        "IN",
+        "EU",
+        "BJ",
+        "KP",
+        "FW",
+        "CM"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "SZ"
+        ],
+        "2300": [
+          "HO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "kqz",
+        "yar",
+        "vdb",
+        "coa"
+      ]
+    },
+    {
+      "day": 24,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "III",
+        "I"
+      ],
+      "ring_settings": [
+        9,
+        19,
+        6
+      ],
+      "plugboard": [
+        "GL",
+        "MY",
+        "CR",
+        "HN",
+        "JX",
+        "DT",
+        "AF",
+        "PU",
+        "IQ",
+        "BO"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "EW"
+        ],
+        "2300": [
+          "KS"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": [
+        "HK",
+        "BW"
+      ],
+      "recognition_groups": [
+        "cmz",
+        "aoj",
+        "zod",
+        "auh"
+      ]
+    },
+    {
+      "day": 23,
+      "month_year": null,
+      "rotor_order": [
+        "IV",
+        "I",
+        "V"
+      ],
+      "ring_settings": [
+        15,
+        3,
+        19
+      ],
+      "plugboard": [
+        "IT",
+        "DV",
+        "HQ",
+        "AJ",
+        "MU",
+        "EX",
+        "KO",
+        "CS",
+        "FY",
+        "LN"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "BP"
+        ],
+        "2300": [
+          "GZ"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "kra",
+        "yas",
+        "xun",
+        "cob"
+      ]
+    },
+    {
+      "day": 22,
+      "month_year": null,
+      "rotor_order": [
+        "I",
+        "V",
+        "III"
+      ],
+      "ring_settings": [
+        12,
+        26,
+        7
+      ],
+      "plugboard": [
+        "EY",
+        "JL",
+        "AK",
+        "NV",
+        "FZ",
+        "CT",
+        "HP",
+        "MX",
+        "BQ",
+        "GS"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "DW"
+        ],
+        "2300": [
+          "IO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "jdm",
+        "uhf",
+        "xuo",
+        "bph"
+      ]
+    },
+    {
+      "day": 21,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "IV",
+        "II"
+      ],
+      "ring_settings": [
+        15,
+        9,
+        12
+      ],
+      "plugboard": [
+        "JP",
+        "DY",
+        "QS",
+        "HL",
+        "AE",
+        "NW",
+        "CU",
+        "IK",
+        "FX",
+        "BR"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "MV"
+        ],
+        "2300": [
+          "GO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "jpf",
+        "aok",
+        "iys",
+        "btx"
+      ]
+    },
+    {
+      "day": 20,
+      "month_year": null,
+      "rotor_order": [
+        "IV",
+        "II",
+        "I"
+      ],
+      "ring_settings": [
+        2,
+        22,
+        5
+      ],
+      "plugboard": [
+        "HT",
+        "NP",
+        "AM",
+        "DX",
+        "GJ",
+        "KQ",
+        "BS",
+        "OV",
+        "ER",
+        "CW"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "IU"
+        ],
+        "2300": [
+          "FL"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "boy",
+        "wac",
+        "uow",
+        "cse"
+      ]
+    },
+    {
+      "day": 19,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "I",
+        "II"
+      ],
+      "ring_settings": [
+        8,
+        19,
+        17
+      ],
+      "plugboard": [
+        "GM",
+        "OX",
+        "BT",
+        "QU",
+        "DP",
+        "HJ",
+        "FK",
+        "SW",
+        "AN",
+        "EL"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "CY"
+        ],
+        "2300": [
+          "IR"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "xjc",
+        "wad",
+        "unj",
+        "ctd"
+      ]
+    },
+    {
+      "day": 18,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "IV",
+        "I"
+      ],
+      "ring_settings": [
+        11,
+        21,
+        1
+      ],
+      "plugboard": [
+        "KW",
+        "IP",
+        "DM",
+        "SV",
+        "JR",
+        "CX",
+        "EN",
+        "AZ",
+        "QT",
+        "BU"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "FH"
+        ],
+        "2300": [
+          "GY"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "kpn",
+        "rzi",
+        "vcm",
+        "bpo"
+      ]
+    },
+    {
+      "day": 17,
+      "month_year": null,
+      "rotor_order": [
+        "I",
+        "V",
+        "II"
+      ],
+      "ring_settings": [
+        18,
+        23,
+        14
+      ],
+      "plugboard": [
+        "BV",
+        "HW",
+        "AR",
+        "NX",
+        "DS",
+        "PT",
+        "CZ",
+        "FI",
+        "LY",
+        "EJ"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "KD"
+        ],
+        "2300": [
+          "XM"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "kdx",
+        "crq",
+        "vcn",
+        "cod"
+      ]
+    },
+    {
+      "day": 16,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "IV",
+        "V"
+      ],
+      "ring_settings": [
+        16,
+        4,
+        7
+      ],
+      "plugboard": [
+        "LU",
+        "CV",
+        "FM",
+        "KR",
+        "BY",
+        "GN",
+        "QW",
+        "DJ",
+        "PS",
+        "AO"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "EI"
+        ],
+        "2300": [
+          "HX"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "lgx",
+        "jri",
+        "uob",
+        "aur"
+      ]
+    },
+    {
+      "day": 15,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "III",
+        "IV"
+      ],
+      "ring_settings": [
+        24,
+        13,
+        10
+      ],
+      "plugboard": [
+        "HZ",
+        "NQ",
+        "AD",
+        "TV",
+        "IX",
+        "KM",
+        "BG",
+        "LO",
+        "CE",
+        "RY"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "JU"
+        ],
+        "2300": [
+          "PP"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "wpt",
+        "vhy",
+        "zoe",
+        "aus"
+      ]
+    },
+    {
+      "day": 14,
+      "month_year": null,
+      "rotor_order": [
+        "I",
+        "IV",
+        "II"
+      ],
+      "ring_settings": [
+        6,
+        20,
+        25
+      ],
+      "plugboard": [
+        "FN",
+        "UY",
+        "CJ",
+        "IW",
+        "LP",
+        "AS",
+        "DK",
+        "GQ",
+        "MO",
+        "BZ"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "ET"
+        ],
+        "2300": [
+          "HR"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "wog",
+        "hxi",
+        "zxi",
+        "bpi"
+      ]
+    },
+    {
+      "day": 13,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "II",
+        "I"
+      ],
+      "ring_settings": [
+        3,
+        26,
+        18
+      ],
+      "plugboard": [
+        "KR",
+        "IZ",
+        "AT",
+        "NV",
+        "BH",
+        "MP",
+        "CG",
+        "OY",
+        "ES",
+        "DF"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "UW"
+        ],
+        "2300": [
+          "LQ"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "lqv",
+        "iqb",
+        "zsy",
+        "coe"
+      ]
+    },
+    {
+      "day": 12,
+      "month_year": null,
+      "rotor_order": [
+        "II",
+        "IV",
+        "III"
+      ],
+      "ring_settings": [
+        4,
+        11,
+        15
+      ],
+      "plugboard": [
+        "DT",
+        "JV",
+        "HS",
+        "CI",
+        "AY",
+        "KU",
+        "EN",
+        "FQ",
+        "LR",
+        "BW"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "MP"
+        ],
+        "2300": [
+          "GO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "zic",
+        "myt",
+        "zof",
+        "dtr"
+      ]
+    },
+    {
+      "day": 11,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "I",
+        "IV"
+      ],
+      "ring_settings": [
+        16,
+        7,
+        2
+      ],
+      "plugboard": [
+        "JS",
+        "PW",
+        "AV",
+        "QX",
+        "DN",
+        "IZ",
+        "KM",
+        "CO",
+        "EG",
+        "FL"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "HY"
+        ],
+        "2300": [
+          "BR"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "inf",
+        "zbm",
+        "krz",
+        "dug"
+      ]
+    },
+    {
+      "day": 10,
+      "month_year": null,
+      "rotor_order": [
+        "IV",
+        "III",
+        "II"
+      ],
+      "ring_settings": [
+        20,
+        12,
+        14
+      ],
+      "plugboard": [
+        "FS",
+        "CQ",
+        "JO",
+        "PR",
+        "AW",
+        "HV",
+        "EZ",
+        "KN",
+        "DU",
+        "GT"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "IL"
+        ],
+        "2300": [
+          "BY"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "ink",
+        "acu",
+        "zxj",
+        "cnu"
+      ]
+    },
+    {
+      "day": 9,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "II",
+        "V"
+      ],
+      "ring_settings": [
+        6,
+        18,
+        10
+      ],
+      "plugboard": [
+        "HK",
+        "TZ",
+        "MX",
+        "LW",
+        "GQ",
+        "AD",
+        "NY",
+        "BE",
+        "CS",
+        "JP"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "RV"
+        ],
+        "2300": [
+          "IO"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "efm",
+        "pmi",
+        "snw",
+        "cof"
+      ]
+    },
+    {
+      "day": 8,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "I",
+        "III"
+      ],
+      "ring_settings": [
+        1,
+        21,
+        17
+      ],
+      "plugboard": [
+        "GU",
+        "SW",
+        "BF",
+        "RX",
+        "EV",
+        "OT",
+        "LQ",
+        "CH",
+        "IP",
+        "KY"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "JM"
+        ],
+        "2300": [
+          "NZ"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "imy",
+        "rjw",
+        "tjm",
+        "cog"
+      ]
+    },
+    {
+      "day": 7,
+      "month_year": null,
+      "rotor_order": [
+        "II",
+        "V",
+        "I"
+      ],
+      "ring_settings": [
+        25,
+        8,
+        23
+      ],
+      "plugboard": [
+        "CX",
+        "AZ",
+        "DV",
+        "KT",
+        "HU",
+        "LW",
+        "GP",
+        "EY",
+        "MR",
+        "FQ"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "IN"
+        ],
+        "2300": [
+          "OS"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "inv",
+        "rkc",
+        "snx",
+        "bpj"
+      ]
+    },
+    {
+      "day": 6,
+      "month_year": null,
+      "rotor_order": [
+        "IV",
+        "II",
+        "V"
+      ],
+      "ring_settings": [
+        13,
+        26,
+        3
+      ],
+      "plugboard": [
+        "DV",
+        "LP",
+        "NQ",
+        "GZ",
+        "OS",
+        "FK",
+        "EW",
+        "MR",
+        "IT",
+        "HX"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "UY"
+        ],
+        "2300": [
+          "BJ"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "yvu",
+        "hsb",
+        "swq",
+        "aut"
+      ]
+    },
+    {
+      "day": 5,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "I",
+        "II"
+      ],
+      "ring_settings": [
+        24,
+        19,
+        22
+      ],
+      "plugboard": [
+        "SY",
+        "EK",
+        "NZ",
+        "OR",
+        "CG",
+        "JM",
+        "QU",
+        "PV",
+        "BI",
+        "LW"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "TX"
+        ],
+        "2300": [
+          "DF"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "seu",
+        "iqe",
+        "swr",
+        "auv"
+      ]
+    },
+    {
+      "day": 4,
+      "month_year": null,
+      "rotor_order": [
+        "II",
+        "IV",
+        "I"
+      ],
+      "ring_settings": [
+        17,
+        5,
+        9
+      ],
+      "plugboard": [
+        "BD",
+        "GV",
+        "AX",
+        "KP",
+        "EM",
+        "PN",
+        "CW",
+        "RU",
+        "HO",
+        "JT"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "IL"
+        ],
+        "2300": [
+          "QS"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "zfj",
+        "hxj",
+        "zxk",
+        "dpt"
+      ]
+    },
+    {
+      "day": 3,
+      "month_year": null,
+      "rotor_order": [
+        "V",
+        "II",
+        "IV"
+      ],
+      "ring_settings": [
+        20,
+        16,
+        11
+      ],
+      "plugboard": [
+        "JT",
+        "NW",
+        "DU",
+        "EO",
+        "KV",
+        "BY",
+        "FS",
+        "HQ",
+        "IM",
+        "LX"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "GP"
+        ],
+        "2300": [
+          "CR"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "clx",
+        "zbn",
+        "zxa",
+        "buk"
+      ]
+    },
+    {
+      "day": 2,
+      "month_year": null,
+      "rotor_order": [
+        "II",
+        "III",
+        "V"
+      ],
+      "ring_settings": [
+        14,
+        3,
+        19
+      ],
+      "plugboard": [
+        "RW",
+        "OQ",
+        "GI",
+        "AZ",
+        "EJ",
+        "MS",
+        "CU",
+        "DH",
+        "PY",
+        "BF"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "LV"
+        ],
+        "2300": [
+          "TX"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "ljs",
+        "jre",
+        "zpq",
+        "coh"
+      ]
+    },
+    {
+      "day": 1,
+      "month_year": null,
+      "rotor_order": [
+        "III",
+        "I",
+        "IV"
+      ],
+      "ring_settings": [
+        18,
+        24,
+        15
+      ],
+      "plugboard": [
+        "NP",
+        "JV",
+        "LY",
+        "IX",
+        "KQ",
+        "AO",
+        "DZ",
+        "CR",
+        "FT",
+        "EM"
+      ],
+      "timed_plugboard": {
+        "1500": [
+          "GS"
+        ],
+        "2300": [
+          "HW"
+        ]
+      },
+      "starting_positions": null,
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": [
+        "plf",
+        "dgw",
+        "tjn",
+        "cnv"
+      ]
+    }
+  ],
+  "sources": [
+    "scan-luftwaffe-2744"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "scan_id": "nara-a557690",
+  "source": "National Archives, REF ID A557690 — Schlüssel M Triton, Juni 1945, TOP SECRET-ULTRA",
+  "notes": "Outer settings only — rotor order and ring settings are on a separate inner settings sheet not yet found. Plugboard transcribed from number pairs (e.g. 18/26 = R/Z). Verify all values against original before use.",
+  "codebook_id": "kriegsmarine-triton",
+  "entries": [
+    {
+      "day": 30, "month_year": "1945-06",
+      "rotor_order": null, "ring_settings": null,
+      "plugboard": ["RZ","QD","UF","CP","SN","VG","HA","LY","EI","JO"],
+      "timed_plugboard": null,
+      "starting_positions": ["H","F","K","D"],
+      "reflector": null, "reflector_raw": null,
+      "recognition_groups": null
+    },
+    {
+      "day": 29, "month_year": "1945-06",
+      "rotor_order": null, "ring_settings": null,
+      "plugboard": ["TM","BJ","DA","LF","EP","RH","OW","GK","WZ","EO"],
+      "timed_plugboard": null,
+      "starting_positions": ["O","M","S","R"],
+      "reflector": null, "reflector_raw": null,
+      "recognition_groups": null
+    },
+    {
+      "day": 28, "month_year": "1945-06",
+      "rotor_order": null, "ring_settings": null,
+      "plugboard": ["ID","DC","RS","CP","TY","WU","MN","FB","VH","AG"],
+      "timed_plugboard": null,
+      "starting_positions": ["E","Y","D","X"],
+      "reflector": null, "reflector_raw": null,
+      "recognition_groups": null
+    }
+  ]
+}

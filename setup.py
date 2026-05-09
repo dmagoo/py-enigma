@@ -19,6 +19,7 @@ setup(
     entry_points={
         "console_scripts": [
             "enigma=enigma.cli:main",
+            "enigma-utils=enigma.utils_cli:main",
         ],
     },
 )

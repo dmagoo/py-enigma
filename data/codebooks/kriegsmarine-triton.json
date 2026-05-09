@@ -1,0 +1,92 @@
+{
+  "codebook_id": "kriegsmarine-triton",
+  "entries": [
+    {
+      "day": 30,
+      "month_year": "1945-06",
+      "rotor_order": null,
+      "ring_settings": null,
+      "plugboard": [
+        "RZ",
+        "QD",
+        "UF",
+        "CP",
+        "SN",
+        "VG",
+        "HA",
+        "LY",
+        "EI",
+        "JO"
+      ],
+      "timed_plugboard": null,
+      "starting_positions": [
+        "H",
+        "F",
+        "K",
+        "D"
+      ],
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": null
+    },
+    {
+      "day": 29,
+      "month_year": "1945-06",
+      "rotor_order": null,
+      "ring_settings": null,
+      "plugboard": [
+        "TM",
+        "BJ",
+        "DA",
+        "LF",
+        "EP",
+        "RH",
+        "OW",
+        "GK",
+        "WZ",
+        "EO"
+      ],
+      "timed_plugboard": null,
+      "starting_positions": [
+        "O",
+        "M",
+        "S",
+        "R"
+      ],
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": null
+    },
+    {
+      "day": 28,
+      "month_year": "1945-06",
+      "rotor_order": null,
+      "ring_settings": null,
+      "plugboard": [
+        "ID",
+        "DC",
+        "RS",
+        "CP",
+        "TY",
+        "WU",
+        "MN",
+        "FB",
+        "VH",
+        "AG"
+      ],
+      "timed_plugboard": null,
+      "starting_positions": [
+        "E",
+        "Y",
+        "D",
+        "X"
+      ],
+      "reflector": null,
+      "reflector_raw": null,
+      "recognition_groups": null
+    }
+  ],
+  "sources": [
+    "nara-a557690"
+  ]
+}
