@@ -36,6 +36,35 @@ Individual flags override values from `--config`, so you can load a historical c
 
 Message input is read from `--input`, piped stdin, or typed interactively if neither is provided.
 
+### Interactive mode
+
+Pass `--interactive` to enter the curses TUI. Type letters to encipher in real time; the rotor positions update with each keypress. Commands are entered with a leading `/`:
+
+| Command | Description |
+|---------|-------------|
+| `/rotors` | Show current rotor order |
+| `/rotors I II III` | Change rotor order (rebuilds machine, clears input) |
+| `/rotors reset` | Reset rotor positions to starting positions |
+| `/rings` | Show current ring settings |
+| `/rings S G L` | Set ring settings (rebuilds machine, clears input) |
+| `/positions` | Show current rotor positions |
+| `/positions A B C` | Set rotor positions |
+| `/positions reset` | Reset rotor positions to starting positions |
+| `/reflector` | Show current reflector |
+| `/reflector UKW-B` | Set reflector (rebuilds machine, clears input) |
+| `/plug` | Show current plugboard pairs |
+| `/plug AE BF CM` | Replace all plugboard pairs |
+| `/plug clear` | Remove all plugboard pairs |
+| `/plug reset` | Restore plugboard to the pairs set at startup |
+| `/reset` | Reset rotor positions (plugboard unchanged) |
+| `/state` | Show full current config |
+| `/help` | Show command reference |
+| `/exit` | Quit |
+
+Backspace removes the last display character (rotor state has already advanced — it cannot be undone). Enter clears the input line only — output accumulates so you can read it. Up/down arrow cycles through command history. Ctrl+D quits.
+
+`--interactive` can be launched with no arguments; the machine defaults to rotors I II III and reflector UKW-B, which can be changed from inside the session.
+
 Enigma is symmetric — the same settings encrypt and decrypt. Feed in ciphertext and you get plaintext out.
 
 ## Examples
@@ -136,6 +165,38 @@ Scan files are raw JSON transcriptions of historical key sheets stored in `data/
 
 ```bash
 pytest
+```
+
+## Indicator procedure
+
+The day's codebook set the machine configuration (rotors, rings, reflector, plugboard) — the same for every message that day. The starting rotor position was chosen fresh by the operator per message and communicated to the receiver via an *indicator* embedded in the message header.
+
+Standard Kriegsmarine procedure:
+1. Set rotors to the daily *ground setting* (Grundstellung)
+2. Encipher a chosen 3-letter message key — the output is the indicator
+3. Transmit the indicator in the message header
+4. Set rotors to the original message key and encipher the body
+
+The receiver reverses step 2 to recover the message key, then decrypts the body.
+
+A typical header looked like: `U35 DE W7 0630 = 46 = WTG PLT =` — where `WTG` is the ground setting and `PLT` is the enciphered message key.
+
+```
+# Set up the machine with the day's codebook settings
+enigma --interactive
+/rotors VIII II IV
+/rings S G L
+/reflector UKW-B
+/plug BD CO EI GL JS KT NV PM QR WZ
+
+# Step 1: decipher the indicator — set rotors to ground setting, type the indicator
+/positions W T G
+PLT
+# Output line shows OOS — the actual message starting positions
+
+# Step 2: set rotors to the derived positions and decrypt the body
+/positions O O S
+MUUQJZVQLORVMCOLYKXE...
 ```
 
 ## Notes

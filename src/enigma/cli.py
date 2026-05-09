@@ -71,11 +71,13 @@ def _resolve_config(args):
     if args.plugboard:
         config["plugboard"] = args.plugboard
 
-    missing = {"rotors", "reflector"} - config.keys()
-    if missing:
-        print(f"error: missing required config: {', '.join(missing)}", file=sys.stderr)
-        sys.exit(1)
+    return config
 
+
+def _apply_defaults(config):
+    """Fill in required fields with defaults if absent."""
+    config.setdefault("rotors",    ["I", "II", "III"])
+    config.setdefault("reflector", "UKW-B")
     return config
 
 
@@ -163,10 +165,16 @@ def main():
 
     args = parser.parse_args()
     config = _resolve_config(args)
-    machine = _build_machine(config)
 
     if args.interactive:
+        _apply_defaults(config)
+        machine = _build_machine(config)
         from .tui import run_tui
-        run_tui(machine, config)
+        run_tui(machine, config, rebuild_fn=_build_machine)
     else:
+        missing = {"rotors", "reflector"} - config.keys()
+        if missing:
+            print(f"error: missing required config: {', '.join(sorted(missing))}", file=sys.stderr)
+            sys.exit(1)
+        machine = _build_machine(config)
         print(machine.decode_string(_read_message(args)))
