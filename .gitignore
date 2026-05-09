@@ -23,6 +23,11 @@ venv.bak/
 # Claude Code
 .claude/
 
+# Python packaging artifacts
+*.egg-info/
+dist/
+build/
+
 # Compiled data artifacts
 *.db
 data/codebooks/backups/
